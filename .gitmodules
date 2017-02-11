@@ -1,0 +1,3 @@
+[submodule "PEAR"]
+	path = PEAR
+	url = https://github.com/mikepultz/netdns2/

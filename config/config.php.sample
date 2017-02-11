@@ -1,0 +1,84 @@
+<?php
+
+/* Local configuration for DynDNS Update */
+
+// ----------------------------------
+// Users
+// ----------------------------------
+// User and password hash to authenticate update clients
+// Use single entry with space seperated values to use
+// same user and password for every dns entry or array
+// (e.g. "record.zone.example.org" => "user $...")
+// for multiple records with seperate authentication
+//
+// Create password hash using index.php on CLI:
+// php index.php PASSWORD
+//
+$config['user'] = 'user $2y$12$S33m1n0eghoyb2T3SmaGjOedUqxmp7VRgITWLUYWURIuzbMMCVLMm';
+// $config['user'] = array(
+//     'record.zone.example.org' => 'user $2y$12$S33m1n0eghoyb2T3SmaGjOedUqxmp7VRgITWLUYWURIuzbMMCVLMm',
+// );
+
+// ----------------------------------
+// Nameserver
+// ----------------------------------
+// IP of the nameserver which will be updated using RFC2136
+// Use single entry to use nameserver for all zones or an
+// array (e.g. "zone.example.org" => "127.0.0.1") for
+// multiple zones with seperate nameservers
+//
+// Default value: 127.0.0.1
+//
+// $config['nameserver'] = '127.0.0.1';
+// $config['nameserver'] = array(
+//     'zone.example.org' => '127.0.0.1'
+// );
+
+// ----------------------------------
+// TSIG
+// ----------------------------------
+// TSIG keys which will be used for update request
+// Use single entry to use TSIG key all zones or an
+// array (e.g. "zone.example.org" => "...") for
+// multiple zones with seperate TSIG keys.
+//
+// Leave option unset to disable TSIG.
+//
+// $config['tsig'] = 'lTr0QJo5HyOdcyoyIsOcFlCYFL3XZGJDjD4xyAHncG39CUcNKFc/Ci8RxylgRLeR8S++Ygq/j7cDPcjry11JEg==';
+// $config['tsig'] = array(
+//     'zone.example.org' => 'lTr0QJo5HyOdcyoyIsOcFlCYFL3XZGJDjD4xyAHncG39CUcNKFc/Ci8RxylgRLeR8S++Ygq/j7cDPcjry11JEg=='
+// );
+
+// ----------------------------------
+// TSIG algorithm
+// ----------------------------------
+// TSIG algorithm which will be used for update request
+//
+// Possible values:
+//   * hmac-md5
+//   * hmac-sha1
+//   * hmac-sha224
+//   * hmac-sha256
+//   * hmac-sha384
+//   * hmac-sha512
+//
+// Default: hmac-sha512
+//
+// $config['tsig_algorithm'] = 'hmac-sha512';
+// $config['tsig_algorithm'] = array(
+//     'zone.example.org' => 'hmac-sha512'
+// );
+
+// ----------------------------------
+// TSIG key name
+// ----------------------------------
+// TSIG key name which will be used for update request
+//
+// Default: dyndns
+//
+// Default value: dyndns
+//
+// $config['tsig_key_name'] = 'dyndns';
+// $config['tsig_key_name'] = array(
+//     'zone.example.org' => 'dyndns'
+// );
